@@ -1,0 +1,65 @@
+﻿#kolonsabitle > div.col-half:hover {
+    background-color: red !important;
+}
+
+#kapak h2 span.spacer {
+    padding: 0 2px;
+    background: none;
+}
+
+div.col-half {
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+#kolonsabitle > div.col-half:hover {
+    background-color: red !important;
+}
+#kolonsabitle {
+ 
+ 
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+  
+}
+
+   .fontkucuk {
+            font-size: 16px !important;
+            padding: 5px;
+            font-weight: 300;
+        }
+        .page-title{
+
+    background:#e10a17;
+    color:#fff;
+    padding:10px;
+
+}
+        .title-16{
+
+            color:#fff !important;
+ 
+        }
+        .page-title{
+
+            width:50% !important;
+        }
+
+
+          .title-16:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 24px solid transparent;
+    border-left: 4px solid #e10a17;
+    border-bottom: 24px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -4px; }
+           #icerikplc_yazaryazilar img {
+                    width: 115px !important;
+                }

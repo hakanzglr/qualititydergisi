@@ -1,0 +1,890 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="V2Sosyete.Master.cs" Inherits="Quality_Dergisi.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <META http-equiv=content-type content=text/html;charset=windows-1254>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/siteana.css" />
+    <style>
+        .js-sbr-slider {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-slider .sbr-navs {
+            bottom: -40px !important;
+        }
+
+        .mfp-content {
+            width: 100% !important;
+        }
+
+        .header-mb {
+            border-bottom: 1px solid #d0c9c9;
+        }
+
+        #bnrdurum {
+            position: absolute;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+        }
+
+        #mobilbuyukbanner {
+            display: none !important;
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            .sagdost, .soldost {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .big, .small, #bnrdurum {
+                display: none !important;
+            }
+
+            #mobilbulten {
+                display: block !important;
+                padding: 20px;
+                border: 1px solid #fd3a13;
+                text-align: center;
+                border-radius: 4px;
+                margin: 5px;
+            }
+
+                #mobilbulten input {
+                    border: 1px solid #808080;
+                }
+
+            #mobilbuyukbanner {
+                display: inline-block !important;
+            }
+
+
+            .title-6 a {
+                text-transform: capitalize !important;
+            }
+
+
+            .dostkapsar {
+                width: 100% !important;
+            }
+        }
+
+        .dostkapsar {
+            width: 80%;
+            margin: 0 auto !important;
+        }
+
+        .search-btn {
+            text-align: center;
+            cursor: pointer;
+             color: #fff;
+            padding: 5px;
+        }
+
+        .hd-search .hd-search-block .search .search-btn:before {
+            background: none !important;
+        }
+
+        .side-bar .pst-block-head {
+            background: #fd3a13;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .side-bar .title-4 {
+            color: #000 !important;
+        }
+
+
+
+        .mfp-container {
+        }
+
+        .main-nav {
+            float: left;
+        }
+
+        /*MegaBanner */
+
+        .clicktag {
+            position: absolute;
+            display: inline-block;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: rgba(0,0,0,0);
+        }
+        /*MegaBanner */
+        
+
+        .side-bar {
+            padding-top: 10px;
+        }
+
+        #sagbolme {
+            border-left: 1px solid #808080;
+        }
+
+        #duyuru {
+            border: 0px !important;
+            background: none !important;
+            background-color: none !important;
+            max-width: 100% !important;
+        }
+
+        .sp-popup .popup-close-ic {
+            right: 10px !important;
+            top: 0px !important;
+            width: 20px;
+            height: 20px;
+            background: url('<%= ResolveUrl("~/kapat.png") %>');
+            background-size: cover;
+        }
+
+        .kapattutar {
+            width: 100%;
+            text-align: center;
+            right: 10px;
+            top: 0px;
+            position: fixed;
+            height: 100px;
+            z-index: 999;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sp-popup .popup-close-ic {
+                display: block !important;
+            }
+
+            #duyuru iframe {
+                width: 100%;
+            }
+
+            .dostkapsar {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+        }
+
+        #cerezok {
+            position: fixed;
+            z-index: 999;
+            bottom: 0;
+            width: 100%;
+            margin: 0px !important;
+            background: #fd3a13;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .cereztamam {
+            background: #fff;
+            color: #fd3a13;
+            padding: 5px;
+            border-radius: 4px;
+            float: right;
+            cursor: pointer;
+        }
+
+        .attireMainNav {
+            opacity: 0 !important;
+            display: none !important;
+        }
+
+        #duyuru a {
+            text-decoration: none !important;
+        }
+
+        .mfp-bg.mfp-mb-menu {
+            background: #fff;
+        }
+
+        #mobilmenu {
+            width: 100%;
+            text-align: left;
+        }
+
+            #mobilmenu li {
+                border-bottom: 1px solid #808080;
+            }
+
+        .mobile-nav-list .mn-item {
+            color: #000;
+        }
+
+        .mb-menu-close-ic {
+            width: 20px;
+            height: 20px;
+            background: url('<%= ResolveUrl("~/kapat.png") %>');
+            background-size: cover;
+        }
+
+        .mb-menu .mfp-close {
+            top: 0px;
+            right: 10px;
+        }
+
+        .mfp-container {
+            background: #fff;
+        }
+
+        .main-header {
+            width: 80% !important;
+            margin: 0 auto;
+        }
+
+        .soldost {
+            left: 0px;
+            margin-left: 0px;
+            position: fixed;
+            z-index: 5;
+            top: 190px;
+        }
+
+        .sagdost {
+            right: 0px;
+            margin-right: 0px;
+            position: fixed;
+            top: 190px;
+            z-index: 5;
+        }
+
+
+        .side-bar .pst-block-head {
+            background: url(<%=ResolveUrl("~/ayractoplu.png")%>) !important;
+            background-repeat: no-repeat !important;
+            background-position-y: bottom !important;
+            padding-left: 0px;
+            text-transform: uppercase !important;
+        }
+
+            .side-bar .pst-block-head strong {
+                text-transform: uppercase !important;
+            }
+
+        .mfp-close {
+            cursor: pointer;
+        }
+
+        .category-tp-1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+   
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, .break-news dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        ul {
+            list-style: none !important;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        .headerWrap, .headerLine1 {
+            background: #e31e24 !important;
+        }
+
+            .headerWrap .headerLine2 ul {
+                background: #122467 !important;
+            }
+
+            .headerWrap .headerLine2 {
+                background: #122467 !important;
+            }
+
+                .headerWrap .headerLine2 ul li a:hover {
+                    background: #e31e24 !important;
+                }
+
+
+
+
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1130px;
+            }
+           
+        }
+
+        @media (min-width: 1920px) {
+          .dostkapat a img{
+             width:100% !important;
+         }
+        }
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+
+
+
+
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .headerWrap .headerLine2 ul li a {
+            font-size: 12px !important;
+        }
+
+        .pst-block-head {
+            margin-bottom: 7px;
+            background: url(/ayractoplumavi.png) !important;
+            background-repeat: repeat-x !important;
+            background-position-y: bottom !important;
+            padding-left: 0px;
+            font-weight: 600 !important;
+            padding-bottom: 10px;
+        }
+
+        .title-blc-1 {
+            width: 100%;
+            margin-bottom: 7px;
+            background: url(/ayractoplumavi.png) !important;
+            background-repeat: repeat-x !important;
+            background-position-y: bottom !important;
+            padding-left: 20px !important;
+        }
+
+        .sfHover {
+            background: #e31e24 !important;
+        }
+
+        .title-4 {
+            margin-bottom: 10px !important;
+        }
+
+        #SonGaleriler, #SonVideolar {
+            border: 1px solid #e31e24;
+            PADDing: 5px;
+            border-radius: 4px;
+        }
+
+        .swiper-wrapper {
+            margin-bottom: -10px !important;
+        }
+
+        .thumbs-slider {
+            margin: 0px 0px 0 !important;
+            border: 1px solid #122467 !important;
+        }
+
+        
+
+        .aktifresim {
+            border: 1px solid red !important;
+        }
+      
+
+          .dostkapat{
+            top:200px !important;
+                        z-index:799 !important;
+
+        }
+        
+         .megaBanner{
+             z-index:800 !important;
+         }
+
+         .js-cookie-notice{
+             font-size:14px !important;
+         }
+
+         #ustuzaklik{
+
+            margin-top:90px;
+         }
+
+        @media screen and (max-width: 767px) {
+            #ustuzaklik{
+
+            margin-top:40px;
+         }
+        }
+    
+    </style>
+    <link href="HTKLUP.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+
+        <div id="duyuru" runat="server" class="sp-popup login mfp-hide">
+        </div>
+
+
+        <div id="login" class="sp-popup login mfp-hide">
+            <div class="btns">
+                <a href="#signin" class="js-popups">Kaydol</a>
+                <a href="#login" class="active js-popups">Giriş Yap</a>
+            </div>
+
+            <div class="form">
+                <input type="text" placeholder="E-Mail adresi">
+                <input type="password" placeholder="Şifre">
+                <button class="btn-8">Giriş Yap</button>
+                <a href="#recentpass" class="js-popups">Şifremi Unuttum</a>
+            </div>
+        </div>
+
+        <!-- Sign in popup -->
+        <div id="qualitydergisiabone" style="width: 100%;" class="signin mfp-hide">
+            <iframe src="aboneol.aspx" style="border: 0; width: 100%; height: 600px;"></iframe>
+        </div>
+
+        <!-- Şifre Unuttum -->
+        <div id="recentpass" class="sp-popup recentpass mfp-hide">
+            <div class="btns">
+                <a href="#signin" class="js-popups">Kaydol</a>
+                <a href="#login" class="active js-popups">Giriş Yap</a>
+            </div>
+            <div class="form">
+                <input type="email" placeholder="Enter Your Email Adress" />
+                <button class="btn-8">Yeni Şifre</button>
+                <a href="#signin" class="js-popups"><i class="popup-arr-left-ic"></i>Kaydol</a>
+            </div>
+        </div>
+
+
+
+        <div class="main-wrapper">
+          
+             
+            
+            <header>
+                <div class="headerWrap">
+                    <div class="headerLine1">
+                        <div style="padding-top: 5px;" class="container rlt">
+
+                            <a href="/" title="HT Kulüp">
+                                <img src="logoBEYAZ.png" width="210" alt="Quality Dergisi" class="logo" />
+                            </a>
+
+
+
+                            <ul style="font-size: 14px;">
+                               
+                                <li><a href="/kunye" title="Künye" class="">Künye</a></li>
+                                <li><a href="/iletisim" title="İletişim" class="">İletişim</a></li>
+                                <li><a href="/Reklam-Quality" title="Reklam" class="">Reklam</a></li>
+
+
+                                <span runat="server" id="sosyallinkler" class=""></span>
+                                 <li> <div class="hd-search">
+                            <a href="#search-block" style="text-decoration: none !important" class="st-btn-1 fa-flip-horizontal js-hd-search">
+                                <i class="li_search"></i>
+                            </a>
+                            <div class="hd-search-block js-hd-search-block">
+                                <div class="search">
+                                    <div class="search-input">
+                                        <input type="text" id="arama" placeholder="Aranacak kelime..." />
+                                    </div>
+                                    <div onclick="mobilara();" class="search-btn">
+                                        Arama
+                                    </div>
+                                </div>
+                            </div>
+                        </div></li>
+                            </ul>
+                            <div class="dateClock" id="dateTime"></div>
+                            <a href="#mb-menu" class="js-asd-menu mobileMenuBtn"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="headerLine2">
+                        <div class="container">
+                            <ul id="am_menulist" runat="server" style="display: none !important;">
+                            </ul>
+                            <ul id="menu11" runat="server" class="sf-menu">
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
+
+
+        
+
+
+        <br />
+        <div class="megaBanner" runat="server" id="megadost" style="position: relative; margin: 0px;">
+        </div>
+
+        <div id="ustuzaklik" class="main">
+
+
+            <div class="soldost dostkapat">
+                <asp:Literal runat="server" ID="soldost"></asp:Literal>
+
+            </div>
+            <div class="main-content dostkapsar">
+                <asp:ContentPlaceHolder ID="icerikplc" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="sagdost dostkapat">
+
+                <asp:Literal runat="server" ID="sagdost"></asp:Literal>
+
+            </div>
+        </div>
+
+
+
+        <div id="mobilbulten" style="display: none;">
+
+            <div class="clearfix"></div>
+            <h4 style="text-decoration: underline;" class="title-8"><strong>E-bülten</strong> Kaydol  </h4>
+            <div class="sbsb-form-1">
+                <div class="sbsb-form">
+                    <div class="sbsb-input">
+                        <span class="sbsb-icon"><i class="li_mail"></i></span>
+                        <input type="email" placeholder="E-mail">
+                    </div>
+                    <div class="sbsb-btn">
+                        <button>Kaydol</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="cerezok" class="alert alert-cookie alert-info alert-dismissible" role="alert">
+            <div class="container">
+                <span class="cereztamam">Tamam</span>
+                <span class="js-cookie-notice">En iyi deneyimi yaşaman için tanımlama bilgilerini kullanıyoruz. Web sitemizi kullanarak, tanımlama bilgilerinizi kullanmamızı kabul etmiş olursunuz.</span>
+            </div>
+        </div>
+        <footer class="main-footer">
+            <div class="container">
+
+                <div class="bottom-part">
+                    <div class="row">
+                        <div class="ft-logo">
+                            <a href="<%= ResolveUrl("~/") %>">
+                                <img src='<%= ResolveUrl("~/logo01.png") %>'>
+                            </a>
+                        </div>
+                        <div class="ft-about">
+                            <article>
+                                <div id="altaciklama" runat="server" class="p"></div>
+                            </article>
+                        </div>
+                        <div class="ft-social">
+                            <ul runat="server" id="sosyalalt" class="ft-social-list pull-right">
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="three-quarters">
+                            <div class="ft-menu">
+                                <ul class="ft-menu-list">
+                                    <li><a href="<%= ResolveUrl("~/") %>">ANASAYFA</a></li>
+                                    <li><a href="<%= ResolveUrl("~/kunye") %>">KÜNYE</a></li>
+                                    <li><a href="<%= ResolveUrl("~/Reklam-Quality") %>">REKLAM</a></li>
+
+                                    <li><a href="<%= ResolveUrl("~/iletisim") %>">İLETİŞİM</a></li>
+
+                                    <li><a href="#">Yardım</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="one-quarter sm-full">
+                            <div class="copyright">© Copyright 2018 Quality Dergisi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="mb-menu" class="mb-menu mfp-hide">
+            <div class="container">
+                <nav class="mobile-nav">
+                    <ul id="mobilmenu" runat="server" class="mobile-nav-list">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <a href="#duyuru" id="duyurutrigger" class="js-popups"></a>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/jquery/dist/jquery.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/js/jquery-ui.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/waypoints/lib/jquery.waypoints.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/superfish/dist/js/superfish.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/magnific-popup/dist/jquery.magnific-popup.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/imagesloaded/imagesloaded.pkgd.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/owl-carousel/owl-carousel/owl.carousel.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/slick-carousel/slick/slick.js") %>'></script>
+         <script src="vendor/Swiper/dist/js/swiper.jquery.js"></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/vendor/sticky-kit/jquery.sticky-kit.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/js/main.js") %>'></script>
+        <script type='text/javascript' src='<%= ResolveUrl("~/js/cookie.js") %>'></script>
+
+
+
+        <script type="text/javascript">
+           
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    var fixedBottom = $(".dostkapat");
+                    if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
+                        fixedBottom.css("top", "0px");
+                        fixedBottom.css("bottom", "200px");
+                    } else {
+                        fixedBottom.css("top", "190px");
+
+                        fixedBottom.css("bottom", "0");
+
+                    }
+                });
+
+                $("#bnrdurum").html("Kapat");
+                $(".big").slideDown();
+                $(".small").slideUp();
+                setTimeout(function () {
+                    $(".big").slideUp();
+                    $(".small").slideDown();
+                    $("#bnrdurum").html("Göster");
+                }, 1000)
+                $('#bnrdurum').click(function () {
+                    var durum = $(".big").css("display");
+                    if (durum == "none") {
+                        $(".small").slideUp();
+                        $(".big").slideDown();
+                        $("#bnrdurum").html("Gizle");
+                    }
+                    else {
+                        $(".small").slideDown();
+                        $(".big").slideUp();
+                        $("#bnrdurum").html("Göster");
+                    }
+                });
+
+                function ShareOnFacebook(url) {
+                    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+                        'facebooksharedialog', 'toolbar=0,status=0,width=626,height=436'); return false;
+                } function ShareOnGooglePlus(url) {
+                    window.open('https://plus.google.com/share?url=' + encodeURIComponent(url), '',
+                        'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;
+                }
+
+
+                function ShareOnTwitter(url) {
+                    var link = $("#linki").html();
+                    var baslik = $("#icerikplc_haberbaslik").html();
+                    window.open('https://twitter.com/intent/tweet?hashtags=qualitydergisi&original_referer=' + url + '&related=qualitydergisi&text=' + baslik + '&url=' + link + '&via=qualitydergisi&sharer', 'toolbar=0,status=0,width=626,height=436');
+                    return false;
+                }
+
+
+
+
+                window.onclick = function (e) {
+                    if (e.target.localName == 'a') {
+                        var url = e.srcElement.getAttribute("data-id");
+                        console.log(url);
+                    }
+                }
+                $(".post-sharing-tp-2 ul li.fb").click(function () {
+                    ShareOnFacebook($("#linki").html());
+                })
+                $(".post-sharing-tp-2 ul li.gp").click(function () {
+                    ShareOnGooglePlus($("#linki").html());
+                })
+                $(".post-sharing-tp-2 ul li.tw").click(function () {
+                    ShareOnTwitter($("#linki").html());
+                })
+                $(".post-sharing-tp-1 ul li.fb").click(function () {
+                    ShareOnFacebook($("#linki").html());
+                })
+                $(".post-sharing-tp-1 ul li.gp").click(function () {
+                    ShareOnGooglePlus($("#linki").html());
+                })
+                $(".post-sharing-tp-1 ul li.tw").click(function () {
+                    ShareOnTwitter($("#linki").html());
+                })
+
+              
+
+
+
+
+                $(".cereztamam").click(function () {
+                    $("#cerezok").hide();
+                    $.cookie("gizlilik", "görüldü", { expires: 365, path: '/' });
+
+
+                })
+
+                if ($.cookie("gizlilik") != null) {
+                    $("#cerezok").hide();
+                }
+
+
+
+                if ($.cookie("duyuru") == null) {
+                    document.getElementById('duyurutrigger').click();
+                    $.cookie("duyuru", "ok", { expires: 365, path: '/' });
+
+                    if (document.documentElement.clientWidth < 767) {
+                        $(".mfp-container").css({
+                            "width": "100%",
+                            "left": "0%",
+                            "top": "25%",
+                            "height": "auto"
+
+
+                        })
+                    }
+                    else {
+
+                        $(".mfp-container").css({
+                            "width": "50%",
+                            "left": "25%",
+                            "top": "25%",
+                            "height": "auto"
+
+                        })
+                    }
+                }
+                else {
+
+
+                    $("#duyuru").html("");
+                }
+
+
+
+
+                $(".mfp-close").click(function () {
+
+                    $("#duyuru").html("");
+                    $(".mfp-container").css({
+                        "width": "100%",
+                        "left": "0%",
+                        "top": "0%",
+                        "height": "100%"
+
+
+                    })
+
+                });
+                //Arama
+
+
+                //Cadde
+                jQuery(".bist100WdgInTabs a").click(function () {
+                    jQuery(".bist100WdgInTabs a span").removeClass("selected"), jQuery(this).find("span").addClass("selected"), jQuery(".bistBottomGraphic div").hide();
+                    var e = jQuery(this).index();
+                    jQuery(".bistBottomGraphic div").eq(e).hide(),
+                        jQuery(".bistDataTxtArea div.bistLine2").hide(),
+                        jQuery(".bistDataTxtArea div.bistLine2").eq(e).show()
+                })
+                jQuery(".bistLine2:first-child").show();
+                //Cadde
+
+
+
+
+
+
+            });
+            $(document).on('keyup', '#arama', function () {
+                if (e.keyCode == 13) {
+                    var aramakelimesi = $("#arama").val();
+                    if (aramakelimesi.length < 3) {
+                        alert("En az 3 karakter girmelisiniz");
+
+                    }
+                    else {
+
+                        var adres = "http://www.qualitydergisi.com/ara/" + aramakelimesi + "";
+
+                        window.location.replace(adres);
+                        window.location.assign(adres);
+                    }
+                }
+            });
+
+            function mobilara() {
+
+
+                var aramakelimesi = $("#arama").val();
+                if (aramakelimesi.length < 3) {
+                    alert("En az 3 karakter girmelisiniz");
+
+                }
+                else {
+
+                    var adres = "http://www.qualitydergisi.com/ara/" + aramakelimesi + "";
+
+                    window.location.replace(adres);
+                    window.location.assign(adres);
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

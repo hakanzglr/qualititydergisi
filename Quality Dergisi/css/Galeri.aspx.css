@@ -1,0 +1,88 @@
+﻿ .fontkucuk {
+            font-size: 16px !important;
+            padding: 5px;
+            font-weight: 300;
+        }
+
+        #yazaryazisi img {
+            width: 115px !important;
+        }
+
+        .page-title {
+            background: #e10a17;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .title-16 {
+            color: #fff !important;
+        }
+
+            .title-16:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 24px solid transparent;
+                border-left: 4px solid #e10a17;
+                border-bottom: 24px solid transparent;
+                position: absolute;
+                top: 0;
+                right: -4px;
+            }
+
+
+        #icerikplc_yazaryazilar img {
+            width: 115px !important;
+        }
+      
+
+        #icerikplc_videosection > iframe {
+            width: 100% !important;
+            height: 400px !important;
+        }
+
+        .resimnumarasi {
+            padding: 5px;
+            background: #e10a17;
+            color: #fff;
+            position: absolute;
+            width: 40px;
+            text-align: center;
+        }
+
+        #icerikplc_Slayt {
+        }
+
+        .rakam {
+            width: 100%;
+        }
+
+        .resimisimler {
+            padding: 10px;
+            color: #000;
+            width: 500px;
+            text-align: left;
+        }
+
+            .resimisimler .paylas {
+                float: right;
+            }
+
+            .resimisimler .isimler {
+                float: left;
+            }
+
+        .rakam {
+            float: left;
+            display: inline-block;
+        }
+        .resimcerceve{
+
+  border:1px solid #808080;
+  display:inline-block;
+  margin-bottom:10px;
+  background:#ede3e3;
+        }
+        .paylas:hover{
+            cursor:pointer;
+        }

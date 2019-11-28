@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" EnableEventValidation="false" Inherits="Quality_Dergisi.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <META http-equiv=content-type content=text/html;charset=windows-1254>
+
+    <title>Admin</title>
+
+    <style>
+
+        .note-toolbar-wrapper{
+
+            background:#fff;
+        }
+
+        .note-toolbar{
+            background:#fff;
+            border-bottom:1px solid #000;
+        }
+         
+
+        .modal-body{
+            bottom:0px !important;
+        }
+
+        .open  {
+       background:#25a7d8;
+        color:#fff !important;
+        
+        }
+        #sidebar > ul > li.open > a{
+
+            color:#fff !important;
+        }
+        @media (max-width: 600px) {
+            #content {
+                padding: 10px !important;
+            }}
+        .yesilcerceve{
+
+            border:1px solid #80bdff !important;
+        }
+        .btn{
+
+            cursor:pointer !important;
+        }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+
+    <link href="css/fullcalendar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/matrix-style.css" />
+    <link rel="stylesheet" href="css/matrix-media.css" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/jquery.gritter.css" />
+    <asp:ContentPlaceHolder ClientIDMode="Static" ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <h1><a href="dashboard.html">Matrix Admin</a></h1>
+        </div>
+
+         
+
+        <div id="sidebar">
+            <a  href="Default.aspx" class="text-center visible-phone"><img width="40" src="menu.png" />  </a>
+            <ul>
+                <li id="anasayfa"><a href="Default.aspx"><i class="icon icon-home"></i><span>Anasayfa</span></a> </li>
+                <li id="duyuruli"><a href="Duyuru.aspx"><i class="icon icon-home"></i><span>Duyuru</span></a> </li>
+                <li id="haberler" class="submenu"><a href="#"><i class="icon icon-file"></i><span>Haberler</span></a>
+                    <ul>
+                        <li id="hlistele"><a href="Haberler.aspx">Haber Listele</a></li>
+                        <li id="hekle"><a href="HaberEkle.aspx">Haber Ekle</a></li>
+
+                    </ul>
+                </li>
+                <li id="yazaryazilari" class="submenu"><a href="#"><i class="icon icon-file"></i><span>Yazar Yazıları</span></a>
+                    <ul>
+                        <li id="yazilistele"><a href="YazarlarYazilar.aspx">Yazı Listele</a></li>
+                        <li id="yaziekle"><a href="YaziEkle.aspx"> Yazı Ekle</a></li>
+                    </ul>
+                </li>
+                  <li id="yazarlar" class="submenu"><a href="Yazarlar.aspx"><i class="icon icon-file"></i><span>Yazarlar</span></a>
+                    <ul>
+                        <li id="yazarekle"><a href="YazarEkle.aspx">Yazar Ekle</a></li>
+						<li id="yazarsil"><a href="Yazarlar.aspx">Yazar Listele</a></li>
+                    </ul>
+                </li>
+                <li id="videolar" class="submenu"><a href="#"><i class="icon icon-file"></i><span>Videolar</span></a>
+                    <ul>
+                        <li id="videolistele"><a href="Videolar.aspx">Videoları Listele</a></li>
+                        <li id="videoekle"><a href="VideoEkle.aspx"> Video Ekle</a></li>
+
+                    </ul>
+                </li>
+                 
+
+ 
+                <li id="kategoriyonetimi"><a href="KategoriYonetimi.aspx"><i class="icon icon-inbox"></i><span>Kategoriler</span></a> </li>
+                <li id="ayarlar"><a href="Ayarlar.aspx"><i class="icon icon-inbox"></i><span>Ayarlar</span></a> </li>
+ 
+                
+                 <li id="reklamlar" class="submenu"><a href="#"><i class="icon icon-file"></i><span>Reklamlar</span></a>
+                    <ul>
+                        <li id="reklamlistele"><a href="Reklamlar.aspx">Reklam Listele</a></li>
+                        <li id="reklamekle"><a href="ReklamEkle.aspx"> Reklam Ekle</a></li>
+                        <li id="reklamekle2"><a href="ReklamEkleMegaUstHaberici.aspx">Mega,Üst Banner/Haberİçi Reklam</a></li>
+                        <li id="reklamekle3"><a href="YanReklamlar.aspx">Yan Reklamlar</a></li>
+
+                    </ul>
+                </li>
+               <li id="galeriler" class="submenu"><a href="#"><i class="icon icon-file"></i><span>Galeriler</span></a>
+                    <ul>
+                        <li id="galerilistele"><a href="Galeri.aspx">Galeri Listele</a></li>
+                        <li id="galeriekle"><a href="GaleriEkle.aspx"> Galeri Ekle</a></li>
+
+                    </ul>
+                </li>
+				
+				 <li id="dergiyonet" class="submenu"> <a href="dergi.html"> <i class="icon icon-file"></i><span>Dergi Yükle</span></a>
+                 <ul>
+                     <li id="gifyukle"><a href="DergiYukle.aspx">Dergi Yükle</a></li>
+                 </ul>
+                </li>
+				 <li id="siteaarlari" class="submenu"> <a href="dergi.html"> <i class="icon icon-file"></i><span>Web Ayarlar</span></a>
+                 <ul>
+                        <li id="kunyeguncel"><a href="kunye.aspx">Künye</a></li>
+                        <li id="reklemguncel"><a href="reklam.aspx">Reklam</a></li>
+						<li id="iletisimguncel"><a href="Iletisim.aspx">İletişim</a></li>
+
+                    </ul>
+                </li>
+				
+				 <li id="adminayar" class="submenu"> <a > <i class="icon icon-file"></i><span>Admin Ayarlar</span></a>
+                   <ul>
+                        <li id="parola"><a href="Yoneticiekle.aspx">Yönetici Ekle</a></li>
+                        <li id="adminupdate"><a href="Yoneticiler.aspx">Yöneticiler</a></li>
+                    
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content">
+           
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        </div>
+
+        <div class="row-fluid">
+            <div id="footer" class="span12">2019 &copy; WSY LAB <a href="http://wsylab.com/destek.html">Destek Alın</a> </div>
+        </div>
+
+       
+
+ 
+    </form>
+</body>
+</html>

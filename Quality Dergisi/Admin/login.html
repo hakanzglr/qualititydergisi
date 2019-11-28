@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <title>Kullanıcı Giriş Ekranı</title><meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="css/matrix-login.css" />
+        <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        input {
+
+            border:1px solid #808080 !important;
+
+        }
+        body{
+            margin-top:0px !important;
+        }
+
+    </style>
+    </head>
+<body>
+    <div id="loginbox">
+        <div class="form-vertical">
+            <div class="control-group normal_text"> <h3><img src="../logo01.png" alt="Logo" /></h3></div>
+            <div id="bilgiler" style="background:#fff;padding:10px;">
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="main_input_box">
+                            <span class="add-on bg_lg"><i class="icon-user"> </i></span><input id="login-username" type="text" placeholder="Kullanıcı adı" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="main_input_box">
+                            <span class="add-on bg_ly"><i class="icon-lock"></i></span><input id="login-password" type="password" placeholder="Parola" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <span class="pull-left"><a onclick="sifreyolla()" class="flip-link btn btn-info">Şifremi Unuttum?</a></span>
+                    <span class="pull-right"><a onclick="giris()" class="btn btn-success" /> Giriş</a></span>
+                </div>
+                <br /><br /><br />
+
+            </div>
+
+           
+            <div style="width:100%;padding:10px;text-align:center;background:white;">
+                <img id="isleme" style="display:none;" src="yukleme.gif" />
+                <div id="place">
+                </div>
+            </div><br /><br />
+        </div>
+        
+    </div>
+
+    
+
+     <script src="js/jquery.min.js"></script>
+    <script src="js/matrix.login.js"></script>
+
+
+    <script type="text/javascript">
+
+        function yonlendir() {
+
+            $.ajax({
+                url: "Z_Kontrol.ashx",
+                type: "POST",
+                data: { "veri": "sifre" },
+                success: function (result) {
+                    if (result == "ok") {
+                        window.location.assign("Default.aspx");
+                    }
+                },
+                error: function (err) {
+
+                    alert(err.statusText);
+                }
+            })
+        }
+
+        yonlendir()
+
+        function sifreyolla() {
+
+            $("#girisbtn").hide();
+            $("#place").html("Şifre Gönderiliyor");
+            myVar = setTimeout(sifregif, 3000);
+            $("#isleme").show();
+
+        }
+
+
+
+        function sifregif() {
+
+            $.ajax({
+                url: "Z_Sifre.ashx",
+                type: "POST",
+                data: { "veri": "sifre" },
+                success: function (result) {
+                    $("#place").html("Şifreniz Gönderildi");
+                    $("#isleme").hide();
+                    $("#girisbtn").show();
+                },
+                error: function (err) {
+
+                    alert(err.statusText);
+                }
+            })
+        }
+
+        function giris() {
+
+            $("#bilgiler").hide();
+            $("#place").html("");
+            myVar = setTimeout(yenile, 3000);
+            $("#isleme").show();
+        }
+
+
+        function yenile() {
+
+
+            if ($("#login-username").val() == "admin") {
+                $.ajax({
+                    url: "Z_login.ashx",
+                    type: "POST",
+                    data: { "veri": $("#login-password").val() },
+                    success: function (result) {
+
+
+                        if (result == "ok") {
+                            window.location.assign("Default.aspx");
+                        }
+                        else {
+
+                            $("#place").html("Şifre doğru değildi");
+                            $("#isleme").hide();
+                            $("#bilgiler").show();
+
+                        }
+                    },
+                    error: function (err) {
+
+                        alert(err.statusText);
+
+
+
+                    }
+                });
+
+            }
+            else {
+
+                $("#place").html("Kullanıcı adı doğru değildi");
+                $("#isleme").hide();
+                $("#bilgiler").show();
+
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<xml version>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+ <Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+ <Alignment ss:Vertical="Bottom"/>
+ <Borders/>
+ <Font/>
+ <Interior/>
+ <NumberFormat/>
+ <Protection/>
+ </Style>
+ <Style ss:ID="BoldColumn">
+ <Font x:Family="Swiss" ss:Bold="1"/>
+ </Style>
+ <Style ss:ID="StringLiteral">
+ <NumberFormat ss:Format="@"/>
+ </Style>
+ <Style ss:ID="Decimal">
+ <NumberFormat ss:Format="0.0000"/>
+ </Style>
+ <Style ss:ID="Integer">
+ <NumberFormat ss:Format="0"/>
+ </Style>
+ <Style ss:ID="DateLiteral">
+ <NumberFormat ss:Format="dd/mm/yyyy;@"/>
+ </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1"><Table><Row><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">id</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">isim</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">eposta</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">faturaadres</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">faturail</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">faturapk</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">faturailce</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">teslimadres</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">teslimil</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">teslimilce</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">teslimpk</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">vergidairesi</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">vergino</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">tarih</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">firmaisim</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">abonelikbaslangic</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">durum</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">basvurutarihi</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">tcno</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">tel</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">baslangic</Data></Cell><Cell ss:StyleID="BoldColumn"><Data ss:Type="String">aciklama</Data></Cell></Row><Row><Cell ss:StyleID="Integer"><Data ss:Type="Number">1000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">test</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">receperoglu1@hotmail.com</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">test</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">İstanbul</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">34000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Beşiktaş</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">test</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">İstanbul</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Beşiktaş</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">34000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">20210022302</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">levent</Data></Cell><Cell ss:StyleID="DateLiteral"><Data ss:Type="DateTime">2018-04-23T09:17:06.000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">Test A.ş</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String"></Data></Cell><Cell ss:StyleID="Integer"><Data ss:Type="Number">1</Data></Cell><Cell ss:StyleID="DateLiteral"><Data ss:Type="DateTime">2018-04-23T09:17:06.000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">20210022302</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String">05511537135</Data></Cell><Cell ss:StyleID="DateLiteral"><Data ss:Type="DateTime">2018-04-23T09:18:00.000</Data></Cell><Cell ss:StyleID="StringLiteral"><Data ss:Type="String"></Data></Cell></Row></Table> </Worksheet></Workbook>

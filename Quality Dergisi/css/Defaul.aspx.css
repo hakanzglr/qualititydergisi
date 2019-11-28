@@ -1,0 +1,110 @@
+﻿.slaytaktif {
+    background: black;
+    color: #fff;
+}
+
+
+
+article > div > h2 {
+    position: absolute;
+    bottom: 10px;
+    text-align: left;
+    width: 100%;
+    left: 10px;
+}
+
+.post .ptp-28-overlay {
+    height: 100% !important;
+}
+
+#icerikplc_yazaryazilar img {
+    width: 115px !important;
+}
+
+#icerikplc_SlaytThumblar > div > div.thumbs-img > figure > img {
+    padding-left: 3px;
+}
+
+#icerikplc_SlaytThumblar {
+    margin-left: 2px;
+    background: #808080 !important;
+}
+
+.thumbs {
+  }
+
+#icerikplc_SlaytThumblar > .one-sixth {
+    border-right:1px solid #fff;
+    padding-right:2px;
+   
+}
+
+#kapak {
+    position: relative;
+ }
+
+#kolonsabitle {
+    /*position: absolute;
+                    bottom: 0px;
+                    left: 5px;*/
+     background-color: black;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#kapak h2 span.spacer {
+    padding: 0 2px;
+    background: none;
+}
+
+div.col-half {
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+#kolonsabitle > div.col-half:hover {
+    background-color: red !important;
+}
+
+#icerikplc_Slayt {
+    overflow: hidden !important;
+    text-align: center;
+    width: 100%;
+    margin-left: 10px !important;
+}
+
+.slider {
+    width: 100% !important;
+}
+
+.one-sixth {
+    width: 10% !important;
+ }
+
+.thumbs-slider {
+ }
+
+.resimno {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+.resimnoaktif {
+    background: Red;
+}
+
+ 
+
+#menu11 {
+    margin-left: 10px !important;
+}
+
+
+
+
+
